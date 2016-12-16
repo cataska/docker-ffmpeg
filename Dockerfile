@@ -21,9 +21,9 @@ RUN cd ~/ffmpeg_sources && \
 
 # Build libvpx
 RUN cd ~/ffmpeg_sources && \
-    wget http://webm.googlecode.com/files/libvpx-v1.3.0.tar.bz2 && \
-    tar xjvf libvpx-v1.3.0.tar.bz2 && \
-    cd libvpx-v1.3.0 && \
+    wget https://github.com/webmproject/libvpx/archive/v1.3.0.tar.gz && \                             
+    tar xzvf v1.3.0.tar.gz && \
+    cd libvpx-1.3.0 && \
     PATH="$HOME/bin:$PATH" ./configure --prefix="$HOME/ffmpeg_build" --disable-examples && \
     PATH="$HOME/bin:$PATH" make && \
     make install && \
